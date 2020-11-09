@@ -1,0 +1,8 @@
+# compiled output of experiment code
+out
+src/Makefile
+src/experiment
+src/experiment_dbg
+
+# experiment results
+scenario/results/*

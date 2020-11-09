@@ -1,0 +1,9 @@
+<routes>
+    <vType id="leaderType" length="5" color="orange" maxSpeed="20"/>
+    <vType id="followerType" length="5" color="blue" maxSpeed="20" tau="0.1" />
+
+    <route id="serpentineRoute" edges="753671951" color="orange"/>
+
+    <vehicle id="leader" type="leaderType" depart="0" route="serpentineRoute" departPos="40" departSpeed="10"/>
+    <vehicle id="follower" type="followerType" depart="0" route="serpentineRoute" departSpeed="10"/>
+</routes>
