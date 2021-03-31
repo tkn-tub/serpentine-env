@@ -4,5 +4,9 @@ src/Makefile
 src/experiment
 src/experiment_dbg
 
+# compiled protobuf files
+src/protobuf/*.pb.h
+src/protobuf/*.pb.cc
+
 # experiment results
 scenario/results/*

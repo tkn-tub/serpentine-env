@@ -3,6 +3,12 @@ import glob
 rule all:
     input: ["src/experiment_dbg", "src/experiment"]
 
+rule protobuf:
+    input: "src/protobuf/{file}.proto"
+    output:
+        cpp=multiext("src/protobuf/{file}", ".pb.cc", ".pb.h"),
+    shell: "env protoc --proto_path src/protobuf --cpp_out src/protobuf {input}"
+
 rule configure:
     input:
         code_files=[glob.glob(f"src/**/*.{ext}", recursive=True) for ext in ["msg", "cc", "h"]],
