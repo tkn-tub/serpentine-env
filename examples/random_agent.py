@@ -28,7 +28,7 @@ def main():
     while not done:
         random_action = env.action_space.sample()
         observation, reward, done, info = env.step(random_action)
-        rewards.append(reward[0])  # note: reward is a 1-dimensional vector
+        rewards.append(reward)
     print("Number of steps taken:", len(rewards))
     print("Mean reward:", sum(rewards) / len(rewards))
 
