@@ -464,6 +464,14 @@ double TraCICommandInterface::Vehicle::getAccumulatedWaitingTime() const
     return traci->genericGetDouble(CMD_GET_VEHICLE_VARIABLE, nodeId, VAR_WAITING_TIME_ACCUMULATED, RESPONSE_GET_VEHICLE_VARIABLE);
 }
 
+void TraCICommandInterface::Vehicle::setTau(double tau)
+{
+    uint8_t variableId = VAR_TAU;
+    uint8_t variableType = TYPE_DOUBLE;
+    TraCIBuffer buf = traci->connection.query(CMD_SET_VEHICLE_VARIABLE, TraCIBuffer() << variableId << nodeId << variableType << tau);
+    ASSERT(buf.eof());
+}
+
 uint8_t TraCICommandInterface::Vehicle::getStopState() const
 {
     const auto apiVersion = traci->versionConfig.version;

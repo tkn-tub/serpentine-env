@@ -250,6 +250,8 @@ public:
          */
         double getAccumulatedWaitingTime() const;
 
+        void setTau(double tau);
+
         /**
          * Get the vehicle's stop state which carries information about whether it is currently stopping and in which context.
          *
